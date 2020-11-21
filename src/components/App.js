@@ -18,14 +18,21 @@ const App = ({slides}) => {
   return (
     <>
     <div id="navigation">
-    <button type="button" onClick={()=>{
+
+    <button type="button" data-testid="button-prev" onClick={()=>{
         if(index==0) disabled = true;
         else setIndex(index-1);
       }}>previous</button>
-      <button type="button" onClick={()=>{
+
+      <button type="button" data-testid="button-next" onClick={()=>{
         if(index==slides.length-1) disabled=true;
         else setIndex(index+1);
       }}>Next</button>
+
+      <button type="button" data-testid="button-restart" onClick={()=>{
+        if(index==0) disabled = true;
+        else {setIndex(0);}
+      }}>Restart</button>
       
     </div>
     {/* <slideShow sl={slides[0]}/> */}
