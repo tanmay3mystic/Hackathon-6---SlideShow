@@ -16,8 +16,8 @@ const App = ({slides}) => {
   const [currentSlide , setCurrentSlide]=useState(slides[index]);
   
   return (
-    <>
-    <div id="navigation">
+    <div className="App">
+    <div  id="navigation">
     <button type="button" disabled={index==0?true:false} data-testid="button-restart" onClick={()=>{
          {setIndex(0);}
       }}>Restart</button>
@@ -38,7 +38,7 @@ const App = ({slides}) => {
       <h1 data-testid="title">{slides[index].title}</h1>
       <p data-testid="text">{slides[index].text}</p>
     </div>
-    </>
+    </div>
   )
 }
 
