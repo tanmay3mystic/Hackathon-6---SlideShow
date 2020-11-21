@@ -14,15 +14,7 @@ import '../styles/App.css';
 const App = ({slides}) => {
   const [index , setIndex]=useState(0);
   const [currentSlide , setCurrentSlide]=useState(slides[index]);
-  // const slideShow=({sl})=>{
-  //   return(
-  //     <div id="slide">
-  //       <h1 data-testid="title">{sl.title}</h1>
-  //       <p data-testid="text">{sl.text}</p>
-  //     </div>
-  //   )
-      
-  // }
+  
   return (
     <>
     <div id="navigation">
@@ -37,7 +29,7 @@ const App = ({slides}) => {
       
     </div>
     {/* <slideShow sl={slides[0]}/> */}
-    <div>{index}</div>
+    
     <div id="slide">
       <h1 data-testid="title">{slides[index].title}</h1>
       <p data-testid="text">{slides[index].text}</p>
