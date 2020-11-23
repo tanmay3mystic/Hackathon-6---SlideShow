@@ -18,17 +18,16 @@ const App = ({slides}) => {
   return (
     <div className="App">
     <div  id="navigation">
-    <button type="button" disabled={index==0?true:false} data-testid="button-restart" onClick={()=>{
-         {setIndex(0);}
+    <button type="button" disabled={index==0} data-testid="button-restart" onClick={()=>{
+         setIndex(0);
       }}>Restart</button>
 
-     <button type="button" disabled={index==slides.length-1?true:false} data-testid="button-next" onClick={()=>{
+     <button type="button" disabled={index==slides.length-1} data-testid="button-next" onClick={()=>{
         setIndex(index+1);
       }}>Next</button>
 
-    <button type="button"  disabled={index==0?true:false} data-testid="button-prev" onClick={()=>{
-        if(index==0) this.disable;
-        else setIndex(index-1);
+    <button type="button"  disabled={index==0} data-testid="button-prev" onClick={()=>{
+        setIndex(index-1);
       }}>previous</button>
  
     </div>
