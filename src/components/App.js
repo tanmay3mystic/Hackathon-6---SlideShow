@@ -12,36 +12,33 @@ import '../styles/App.css';
 // }
 
 const App = ({slides}) => {
-  const [index , setIndex]=useState(0);
-  const [currentSlide , setCurrentSlide]=useState(slides[index]);
- 
+  const [index  , setIndex]=useState(0);
+  
+  
+
+
+  
   return (
+
     <div className="App">
-    <div  id="navigation">
-    <button type="button" disabled={index==0} data-testid="button-restart" onClick={()=>{
-         setIndex(0);
-         setCurrentSlide(slides[index]);
-      }}>Restart</button>
+      <div id="navigation">
+        <button disabled={index==0} data-testid="button-restart" onClick={()=>(setIndex(0))}>
+          Restart
+        </button>
+        <button data-testid="button-next" disabled={index==slides.length-1} onClick={()=>(setIndex(index+1))}>
+          Next
+        </button>
+        <button data-testid="button-prev" disabled={index==0} onClick={()=>(setIndex(index-1))}>
+          Prev
+        </button>
+      </div>
 
-     <button type="button" disabled={index==slides.length-1} data-testid="button-next" onClick={()=>{
-        setIndex(index+1);
-        setCurrentSlide(slides[index]);
-      }}>Next</button>
-
-    <button type="button"  disabled={index==0} data-testid="button-prev" onClick={()=>{
-        setIndex(index-1);
-        setCurrentSlide(slides[index]);
-      }}>Prev</button>
- 
+      <div id="slide">
+         <h1  data-testid="title">{slides[index].title}</h1>
+         <p data-testid="text">{slides[index].text}</p>
+      </div>
     </div>
-    {/* <slideShow sl={slides[0]}/> */}
-    
-    <div id="slide">
-      <h1 data-testid="title">{currentSlide.title}</h1>
-      <p data-testid="text">{currentSlide.text}</p>
-    </div>
-    </div>
-  )
+  );
 }
 
 
